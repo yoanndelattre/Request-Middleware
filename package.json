@@ -1,0 +1,22 @@
+{
+  "name": "request-middleware",
+  "version": "1.0.0",
+  "description": "Request Middleware is an application that receives and sends requests to services.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoanndelattre/Request-Middleware.git"
+  },
+  "keywords": [
+    "request",
+    "middleware"
+  ],
+  "author": "Yoann Delattre",
+  "bugs": {
+    "url": "https://github.com/yoanndelattre/Request-Middleware/issues"
+  },
+  "homepage": "https://github.com/yoanndelattre/Request-Middleware#readme"
+}
