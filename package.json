@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/yoanndelattre/Request-Middleware/issues"
   },
-  "homepage": "https://github.com/yoanndelattre/Request-Middleware#readme"
+  "homepage": "https://github.com/yoanndelattre/Request-Middleware#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
