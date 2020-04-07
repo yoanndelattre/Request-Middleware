@@ -1,20 +1,24 @@
 const express = require('express')
 const app = express()
-const GET_Request = require('./assets/GET_Request')
-const POST_Request = require('./assets/POST_Request')
+const bodyParser = require('body-parser')
+const axios = require('axios')
+const stringify = require('json-stringify-safe')
 
+app.use(bodyParser.json())
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
+    next();
 })
 
-app.post('/', (req, res) => {
+app.post('/', async(req, res) => {
     // For GET request
     if (req.body.method === 'GET') {
-        GET_Request.GET_Request(req, res)
+        const response = await axios(req.body.urlget)
+        res.json(JSON.parse(stringify(response)))
     }
     // For POST request
     if (req.body.method === 'POST') {
-        POST_Request.POST_Request(req, res)
+        console.log('post request')
     }
 })
 
