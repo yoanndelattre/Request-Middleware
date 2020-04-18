@@ -5,21 +5,15 @@ const axios = require('axios')
 const stringify = require('json-stringify-safe')
 
 app.use(bodyParser.json())
+const ACAO = process.env.ACAO || "*"
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Origin', ACAO);
     next();
 })
 
 app.post('/', async(req, res) => {
-    // For GET request
-    if (req.body.method === 'GET') {
-        const response = await axios(req.body.urlget)
-        res.json(JSON.parse(stringify(response)))
-    }
-    // For POST request
-    if (req.body.method === 'POST') {
-        console.log('post request')
-    }
+    const response = await axios(req.body.urlget)
+    res.json(JSON.parse(stringify(response)))
 })
 
 const port = process.env.PORT || 8080
