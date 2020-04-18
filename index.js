@@ -12,8 +12,15 @@ app.use(function(req, res, next) {
 })
 
 app.post('/', async(req, res) => {
-    const response = await axios(req.body.urlget)
-    res.json(JSON.parse(stringify(response)))
+    if (req.body.urlget) {
+        const response = await axios(req.body.urlget)
+        res.json(JSON.parse(stringify(response)))
+        console.log ('The request to the ' + req.body.urlget + ' website worked')
+    }
+    else if (!req.body.urlget) {
+        res.status(500).send('Specify "urlget" request body')
+        console.error('Error client -> Specify "urlget" request body')
+    }
 })
 
 const port = process.env.PORT || 8080
