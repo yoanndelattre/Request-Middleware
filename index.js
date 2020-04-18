@@ -13,9 +13,14 @@ app.use(function(req, res, next) {
 
 app.post('/', async(req, res) => {
     if (req.body.urlget) {
-        const response = await axios(req.body.urlget)
-        res.json(JSON.parse(stringify(response)))
-        console.log ('The request to the ' + req.body.urlget + ' website worked')
+        const timeout = req.body.timeout || 2000
+        const response = await axios(req.body.urlget, {
+            timeout: timeout
+        })
+        if ((response.status) === 200) {
+            res.json(JSON.parse(stringify(response)))
+            console.log ('The request to the ' + req.body.urlget + ' website worked')
+        }
     }
     else if (!req.body.urlget) {
         res.status(500).send('Specify "urlget" request body')
