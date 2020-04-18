@@ -17,10 +17,8 @@ app.post('/', async(req, res) => {
         const response = await axios(req.body.urlget, {
             timeout: timeout
         })
-        if ((response.status) === 200) {
             res.json(JSON.parse(stringify(response)))
             console.log ('The request to the ' + req.body.urlget + ' website worked')
-        }
     }
     else {
         res.status(500).send('Specify "urlget" request body')
