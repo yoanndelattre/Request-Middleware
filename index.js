@@ -21,7 +21,7 @@ app.post('/', async(req, res) => {
             console.log ('The request to the ' + req.body.urlget + ' website worked')
     }
     else {
-        res.status(500).send('Specify "urlget" request body')
+        res.end('Specify "urlget" request body')
         console.error('Error client -> Specify "urlget" request body')
     }
 })
