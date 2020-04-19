@@ -22,8 +22,8 @@ app.post('/', async(req, res) => {
             console.log ('The request to the ' + req.body.urlget + ' website worked')
         }
         catch (e) {
-            res.send('Cannot hit target ' + e)
-            console.error('Cannot hit target ' + e)
+            res.send('Cannot hit target -> ' + e)
+            console.error('Cannot hit target -> ' + e)
         }
     }
     else {
