@@ -13,15 +13,21 @@ app.use(function(req, res, next) {
 
 app.post('/', async(req, res) => {
     if (req.body.urlget) {
-        const timeout = req.body.timeout || 2000
-        const response = await axios(req.body.urlget, {
-            timeout: timeout
-        })
+        try {
+            const timeout = req.body.timeout || 2000
+            const response = await axios(req.body.urlget, {
+                timeout: timeout
+            })
             res.json(JSON.parse(stringify(response)))
             console.log ('The request to the ' + req.body.urlget + ' website worked')
+        }
+        catch (e) {
+            res.send('Cannot hit target ' + e)
+            console.error('Cannot hit target ' + req.body.urlget)
+          }
     }
     else {
-        res.end('Specify "urlget" request body')
+        res.send('Specify "urlget" request body')
         console.error('Error client -> Specify "urlget" request body')
     }
 })
