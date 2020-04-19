@@ -19,7 +19,7 @@ app.post('/', async(req, res) => {
                 timeout: timeout
             })
             res.json(JSON.parse(stringify(response)))
-            console.log ('The request to the ' + req.body.urlget + ' website worked')
+            console.log ('\x1b[37m', 'The request to the ' + req.body.urlget + ' website worked')
         }
         catch (e) {
             res.send('Cannot hit target -> ' + e)
@@ -34,5 +34,5 @@ app.post('/', async(req, res) => {
 
 const port = process.env.PORT || 8080
 app.listen(port, function () {
-    console.log(`Server listening on port ${port}`)
+    console.log('\x1b[37m', `Server listening on port ${port}`)
 })
