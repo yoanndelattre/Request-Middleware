@@ -9,7 +9,6 @@
 * ACAO (process.env.ACAO) : To specify the Access-Control-Allow-Origin (default: *)
 * PORT (process.env.PORT) : To specify the listening port (default: 8080)
 <br/>
-<br/>
 
 ### You can specify two variables in the post request body :
 
