@@ -23,12 +23,12 @@ app.post('/', async(req, res) => {
         }
         catch (e) {
             res.send('Cannot hit target -> ' + e)
-            console.error('Cannot hit target -> ' + e)
+            console.error('\x1b[31m', 'Cannot hit target -> ' + e)
         }
     }
     else {
         res.send('Specify "urlget" request body')
-        console.error('Error client -> Specify "urlget" request body')
+        console.error('\x1b[31m', 'Error client -> Specify "urlget" request body')
     }
 })
 
