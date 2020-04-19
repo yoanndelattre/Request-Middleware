@@ -7,8 +7,8 @@ const stringify = require('json-stringify-safe')
 app.use(bodyParser.json())
 const ACAO = process.env.ACAO || "*"
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', ACAO);
-    next();
+    res.header('Access-Control-Allow-Origin', ACAO)
+    next()
 })
 
 app.post('/', async(req, res) => {
@@ -23,8 +23,8 @@ app.post('/', async(req, res) => {
         }
         catch (e) {
             res.send('Cannot hit target ' + e)
-            console.error('Cannot hit target ' + req.body.urlget)
-          }
+            console.error('Cannot hit target ' + e)
+        }
     }
     else {
         res.send('Specify "urlget" request body')
@@ -34,5 +34,5 @@ app.post('/', async(req, res) => {
 
 const port = process.env.PORT || 8080
 app.listen(port, function () {
-    console.log(`Server listening on port ${port}`);
-});
+    console.log(`Server listening on port ${port}`)
+})
