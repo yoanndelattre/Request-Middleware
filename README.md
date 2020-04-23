@@ -1,7 +1,7 @@
 # Request Middleware
 &nbsp;
 
-## Request Middleware is an application that sends a get request to services.
+## Request Middleware is an application that sends a GET request to services.
 &nbsp;
 
 ### You can specify two runtime environment variables :
