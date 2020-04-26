@@ -16,4 +16,4 @@ jobs:
           name: Push application Docker image
           command: |
             docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD docker.pkg.github.com
-            docker push docker.pkg.github.com/yoanndelattre/Request-Middleware/Request_Middleware:latest
+            docker push docker.pkg.github.com/yoanndelattre/request-middleware/request_middleware:latest
