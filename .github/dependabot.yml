@@ -6,4 +6,4 @@ updates:
     interval: monthly
     time: "01:00"
     timezone: Europe/Paris
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 20
